@@ -4,12 +4,6 @@
 #### Pull out a variable for re-use in template with:
         (someVar | async) as toUse
         <tr *ngIf="(observableDto | async) as realDto">
-
-#### !== vs !=
-        Use an extra '=' for strict mode. (check types)
-####  Try to use .find instead of loops:
-        This pulls profileKey out of each entry in 'list' looking for a match
-        const profile = this.list.find( ({profileKey}) => profileKey == targetKey);
 #### Unsubscribe after subscribing
         Needed for DOM input/mouse/key listener events,
         Not required for other kinds of subscription but arguably neat.
