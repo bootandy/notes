@@ -8,7 +8,7 @@
         const profile = this.list.find( ({profileKey}) => profileKey == targetKey);    
 
 # HTML:                     
-## FxFlx:              
+## FxFlex:              
     Must have imported FlexLayoutModule to work.
     This will do what you expect:
      fxFlex="" # Fills the right gap
