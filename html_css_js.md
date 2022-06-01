@@ -1,8 +1,12 @@
 # JavaScript  
 ### Debugger:                
     add 'debugger' to code - will drop you into debugger in console in browser.
-    
-                       
+#### Prefer !== over !=
+        Use an extra '=' for stict type check mode
+####  Try to use .find instead of loops:
+        This pulls profileKey out of each entry in 'list' looking for a match
+        const profile = this.list.find( ({profileKey}) => profileKey == targetKey);    
+
 # HTML:                     
 ## FxFlx:              
     Must have imported FlexLayoutModule to work.
