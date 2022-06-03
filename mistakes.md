@@ -1,4 +1,7 @@
 
+[Gist of python mistakes](https://gist.github.com/bootandy/6fee9cf5f6e1cfc4484b0205464fee4f)
+
+
 ## Mistakes:
 #### Read docs on new API before using
 * Could have saved money with the google maps & places API 
