@@ -29,3 +29,30 @@
 # CSS:
 ### [CSS grid](https://cssgridgarden.com/)
   
+
+# JavaScript oddities in RegEx:
+Short version: JavaScript incorrectly assumes unicode characters are always 2 bytes, they may be 4. It's regex handler cant deal with the modern 4 byte unicode characters.
+
+ Get a JS console and try this
+/./.exec('a')
+>["a"]
+
+^ This regex '.' will match the single character 'a'.
+Now try with a complex unicode char like an emoji:
+/./.exec('😂')
+> ["�"]
+The JS regex matches half of the unicode character. 
+What is interesting is if you specify a 2 letter match JS finds the character:
+
+/../.exec('😂')
+>["😂"]
+
+'😂'.length
+>2
+
+In other unrelated regex bugs: \w can not understand accents:
+/\w/.exec('Ä')
+> Null
+
+Reading more about crazy Unicode in Javascript. Note that some accents can be displayed as letter followed by accent (2 characters) and that the same character can be letter_with_accent (1 character). Ofcourse if this happens the string length is different and they don't match.
+
