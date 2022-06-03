@@ -42,7 +42,7 @@ Horizontal align middle:
 
 
 
-# JavaScript oddities in RegEx:
+## JavaScript oddities in RegEx:
 Short version: JavaScript incorrectly assumes unicode characters are always 2 bytes, they may be 4. It's regex handler cant deal with the modern 4 byte unicode characters.
 
  Get a JS console and try this
@@ -68,3 +68,28 @@ In other unrelated regex bugs: \w can not understand accents:
 
 Reading more about crazy Unicode in Javascript. Note that some accents can be displayed as letter followed by accent (2 characters) and that the same character can be letter_with_accent (1 character). Ofcourse if this happens the string length is different and they don't match.
 
+## Drawing on GoogleMaps:
+Demo code:
+```
+              const coordinates = // array of lat, lng
+              const flightPath = new google.maps.Polyline({
+                path: coordinates,
+                geodesic: true,
+                strokeColor: '#73B9FF',
+                strokeOpacity: 1.0,
+                strokeWeight: 4,
+                 icons: [{
+                    icon:  {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+    },
+                    offset: '100%'
+                  }],
+                map: this.theMap,
+```
+Useful links
+
+* [Google maps doc on custom symbols](https://developers.google.com/maps/documentation/javascript/symbols)
+
+* [Custom google maps markers](https://levelup.gitconnected.com/how-to-create-custom-html-markers-on-google-maps-9ff21be90e4b)
+
+* [Demo for how to do many things in google maps](https://ngmap.github.io/#/!control-simple.html)
