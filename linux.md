@@ -8,6 +8,17 @@
 * `ls badtext > out 2>&1` Redirecting stderr to the same file as stdout.
 
 
+#### TcpDump notes:
+1. To monitor HTTP traffic including request and response headers and message body:
+* tcpdump -A -s 0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+2. To monitor HTTP traffic including request and response headers and message body from a particular source:
+* tcpdump -A -s 0 'src example.com and tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
+3. To monitor HTTP traffic including request and response headers and message body from local host to local host:
+* tcpdump -A -s 0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)' -i lo
+4) To listen to https traffic limited to the interface ethernet 0: (Obviously this is encrypted so not legible)
+* /usr/sbin/tcpdump  -i eth0 port 433
+
+
 #### Overview of Root *nix Directories:
  ```
  Core:
