@@ -3,7 +3,7 @@
 * If you access a property or dictionary reference 3 times or more then pull it out into a variable.
 * [Don't use `select *`](https://stackoverflow.com/questions/3639861/why-is-select-considered-harmful) when dealing with an SQL database
 
-* [Gist of python mistakes](https://gist.github.com/bootandy/6fee9cf5f6e1cfc4484b0205464fee4f)#
+[Gist of python mistakes](https://gist.github.com/bootandy/6fee9cf5f6e1cfc4484b0205464fee4f)
 
 
 ## Generic Notes:
