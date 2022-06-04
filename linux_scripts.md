@@ -24,7 +24,7 @@ Note: add -P for more regex terms allowing you to use \d & \s [Search for 50X er
 
 * grep -P '\s50\d\s' 2014-05-20.log
 
- #### I want to grep for all these values in a file in 1 go:
+ #### I want to grep for all these values in `file.txt` in 1 go:
 
 * grep -v -f file.txt test.txt
 
@@ -42,8 +42,9 @@ cat ab2.txt
 a=1
 bbbb=2
 cc=4
+awk '{  split($1, ar, "="); sum += ar[2]; } END { print sum; }' < ab2.txt
 ```
-* awk '{  split($1, ar, "="); sum += ar[2]; } END { print sum; }' < ab2.txt
+
 
 #### Awk:
 * $0 = the whole line
@@ -76,7 +77,7 @@ Split filename by '_' show first part of filename:
 * ls * | cut -f1 -d '_'
 
 #### Remove space from string in script:
-* nospace=`echo "hello there hi" | tr -d " "`
+* ``` nospace=`echo "hello there hi" | tr -d " "` ```
 
 #### Shell IO:
 * ` > `   Is write stdout and overwrite
