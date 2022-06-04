@@ -1,13 +1,4 @@
 
-
-#### Shell IO:
-* ` > `   Is write stdout and overwrite
-* ` >> `  Is append stdout
-* ` | `   Is stdout -> stdin
-* `2> `   Is write stderr
-* `ls badtext > out 2>&1` Redirecting stderr to the same file as stdout.
-
-
 #### TcpDump notes:
 1. To monitor HTTP traffic including request and response headers and message body:
 * tcpdump -A -s 0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'
