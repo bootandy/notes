@@ -16,7 +16,7 @@
 #### Delete remote branch
 * git push origin --delete 
 
-### Pull someone else's branch to local files:
+#### Pull someone else's branch to local files:
 *  git remote add username https://github.com/username/projectname.git  
 *  git fetch username
 
