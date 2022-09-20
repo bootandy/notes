@@ -1,4 +1,12 @@
 
+#### Cron:
+[From SO](https://stackoverflow.com/questions/12786410/run-cron-job-every-n-minutes-plus-offset)
+
+Note the number after / must exactly divide by 60 or jobs will not run at the same time each hour.
+
+*  5-59/20 * * * *     -  Run a task every 20 minutes starting at 5 past the hour:
+* 10-59/25 * * * *     -  Run at 10 minutes after and 35 minutes after:
+
 #### TcpDump notes:
 0. Try tracert:
 * tracert www.google.com
