@@ -5,6 +5,8 @@
 
 * git reset --hard master@{"10 minutes ago"}   
 
+* git clean -fd (Removes untracked local changes)
+
 #### Find old deleted commits
 
 * git reflog
