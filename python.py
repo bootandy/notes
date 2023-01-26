@@ -18,3 +18,12 @@ class Sample:
         pass
       
 # -------------------------------------------------------------
+
+# Mock a context manager - Here a sock connection returns a mocked socket
+@mock.patch("socket.create_connection")
+def test_basic(con):
+    mock_socket = mock.Mock()
+    mock_socket.id = "sock"
+    con.return_value.__enter__.return_value = mock_socket
+
+    
