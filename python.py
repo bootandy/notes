@@ -27,3 +27,11 @@ def test_socket_mocking(con):
     con.return_value.__enter__.return_value = mock_socket
 
     
+# Mock a method that is imported directly by other lib that you are testing.
+import lib.sublib as testmodule
+
+@patch(f"{testmodule.__name__}.method_name", autospec=True)
+def test_rate_break_report_email(method_name,):
+    assert method_name.called
+    
+    
