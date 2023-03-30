@@ -31,7 +31,8 @@ def test_socket_mocking(con):
 import lib.sublib as testmodule
 
 @patch(f"{testmodule.__name__}.method_name", autospec=True)
-def test_rate_break_report_email(method_name):
+@patch(f"{testmodule.__name__}.closest_first", autospec=True)
+def test_rate_break_report_email(closest_first, method_name):
     # Override using either one of these:
     method_name.return_value = 'To return when called '
     method_name.side_effect = Exception("i am raised when called")
