@@ -1,3 +1,13 @@
+# ---------- Description Notes ----------------
+# Python: Callables are covariant in their returns, but contravariant in their parameters.
+#
+# Pylint
+# Ways to ignore for block or function:
+# https://pylint.readthedocs.io/en/latest/user_guide/messages/message_control.html
+# pylint: disable=unbalanced-tuple-unpacking
+
+# -------------------------------------------------------------
+
 # Decorate a method in a class and still access self:
 
 def track_runtime(func: Callable[..., None]) -> Callable[..., None]:
@@ -16,10 +26,7 @@ class Sample:
     @track_runtime
     def begin_check(self):
         pass
-# -------------------------------------------------------------
-# Ways to ignore for block or function:
-# https://pylint.readthedocs.io/en/latest/user_guide/messages/message_control.html
-# pylint: disable=unbalanced-tuple-unpacking
+    
 # -------------------------------------------------------------
 
 # Mock a context manager - Here a sock connection returns a mocked socket
