@@ -1,5 +1,6 @@
 # ---------- Description Notes ----------------
-# Python: Callables are covariant in their returns, but contravariant in their parameters.
+# Callables are Covariant in their returns, but Contravariant in their parameters.
+# https://mypy-play.net/?mypy=latest&python=3.11&gist=b9a1485fd8a0f6ea920f579e30ed77ee
 #
 # Pylint
 # Ways to ignore for block or function:
