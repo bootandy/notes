@@ -31,6 +31,7 @@ class Sample:
 # -------------------------------------------------------------
 
 # Mock a context manager - Here a sock connection returns a mocked socket
+
 @mock.patch("socket.create_connection")
 def test_socket_mocking(con):
     mock_socket = mock.Mock()
@@ -50,5 +51,9 @@ def test_rate_break_report_email(closest_first, method_name):
     
     testmodule.do_main_work_that_calls_method_name()
     assert method_name.called
-    
-   
+
+# -------------------------------------------------------------   
+# Pytest run and see DEBUG logs:
+# pytest -o log_cli=true --log-cli-level=DEBUG 
+
+# -------------------------------------------------------------   
