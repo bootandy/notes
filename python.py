@@ -38,10 +38,14 @@ def test_socket_mocking(con):
     mock_socket.id = "sock"
     con.return_value.__enter__.return_value = mock_socket
 
+# Mock multiple calls at once:
+with (patch("base.someView", mock_tiny_feed),patch("base.otherView", mock_feed)):
     
+# Create a Mock that you can call str() on:
+Mock(Name=str('my name'), __str__=lambda self: self.Name)
+
 # Mock a method that is imported directly by other lib that you are testing.
 import lib.sublib as testmodule
-
 @patch(f"{testmodule.__name__}.method_name", autospec=True)
 @patch(f"{testmodule.__name__}.closest_first", autospec=True)
 def test_rate_break_report_email(closest_first, method_name):
