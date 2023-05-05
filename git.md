@@ -34,6 +34,8 @@ Git logs with follow [Follow change thru file moves]:
 * git log --follow
 Search for component:
 * git log -p -S SEARCH_FOR optional_limit_by_dir
+History of a file:
+* git log --full-history -- dir/myfile.py
 
 #### Edit commit order:
 * git rebase -i
