@@ -6,6 +6,9 @@
 # Ways to ignore for block or function:
 # https://pylint.readthedocs.io/en/latest/user_guide/messages/message_control.html
 # pylint: disable=unbalanced-tuple-unpacking
+#
+# Mock Gotchas:
+# https://alexmarandon.com/articles/python_mock_gotchas/
 
 # -------------------------------------------------------------
 
