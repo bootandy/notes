@@ -40,6 +40,8 @@ def test_socket_mocking(con):
     mock_socket = mock.Mock()
     mock_socket.id = "sock"
     con.return_value.__enter__.return_value = mock_socket
+    # Do something
+    assert "data" in mock_socket.sendall.call_args_list[0].args[0]
 
 # Mock multiple calls at once:
 with (patch("base.someView", mock_tiny_feed),patch("base.otherView", mock_feed)):
