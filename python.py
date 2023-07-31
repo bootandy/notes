@@ -10,7 +10,7 @@
 # Mock Gotchas:
 # https://alexmarandon.com/articles/python_mock_gotchas/
 
-# -------------------------------------------------------------
+# DECORATE -------------------------------------------------------------
 
 # Decorate a method in a class and still access self:
 
@@ -31,7 +31,7 @@ class Sample:
     def begin_check(self):
         pass
     
-# -------------------------------------------------------------
+# MOCK -------------------------------------------------------------
 
 # Mock a context manager - Here a sock connection returns a mocked socket
 
@@ -60,8 +60,16 @@ def test_rate_break_report_email(closest_first, method_name):
     
     testmodule.do_main_work_that_calls_method_name()
     assert method_name.called
+    
+# Mock a method used in same file as testing:
+# Must import the module to the current namespace like this:
+from something import modulename
 
-# -------------------------------------------------------------   
+def test_thing():
+    with(mock.patch("something.modulename.class_or_func", mock.Mock())):
+        call_thing()
+
+# PYTEST -------------------------------------------------------------   
 # Pytest run and see DEBUG logs:
 # pytest -o log_cli=true --log-cli-level=DEBUG 
 
