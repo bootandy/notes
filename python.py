@@ -73,4 +73,7 @@ def test_thing():
 # Pytest run and see DEBUG logs:
 # pytest -o log_cli=true --log-cli-level=DEBUG 
 
-# -------------------------------------------------------------   
+# PDB -------------------------------------------------------------   
+# Add breakpoint at runtime:
+# b <linenumber> (current file)
+# b <full_file_path>:<linenumber>
