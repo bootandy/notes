@@ -72,6 +72,8 @@ def test_thing():
 # PYTEST -------------------------------------------------------------   
 # Pytest run and see DEBUG logs:
 # pytest -o log_cli=true --log-cli-level=DEBUG 
+# Global setup / teardown methods:
+# https://stackoverflow.com/questions/17801300/how-to-run-a-method-before-all-tests-in-all-classes
 
 # PDB -------------------------------------------------------------   
 # Add breakpoint at runtime:
