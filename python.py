@@ -73,7 +73,10 @@ def test_thing():
 # Pytest run and see DEBUG logs:
 # pytest -o log_cli=true --log-cli-level=DEBUG 
 # Global setup / teardown methods:
-# https://stackoverflow.com/questions/17801300/how-to-run-a-method-before-all-tests-in-all-classes
+#    https://stackoverflow.com/questions/17801300/how-to-run-a-method-before-all-tests-in-all-classes
+# Global apply to all fixture: Autouse
+#    https://docs.pytest.org/en/6.2.x/fixture.html
+
 
 # PDB -------------------------------------------------------------   
 # Add breakpoint at runtime:
