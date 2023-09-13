@@ -64,12 +64,17 @@ def test_rate_break_report_email(closest_first, method_name):
 # Mock a method used in same file as testing:
 # Must import the module to the current namespace like this:
 from something import modulename
-
 def test_thing():
     with(mock.patch("something.modulename.class_or_func", mock.Mock())):
         call_thing()
 
 # PYTEST -------------------------------------------------------------   
+
+# Test Catch Exceptions
+def test_thing_that_raises():
+    with pytest.raises(AttributeError):
+        thing_that_raises("nobody_matches")
+    
 # Pytest run and see DEBUG logs:
 # pytest -o log_cli=true --log-cli-level=DEBUG 
 # Global setup / teardown methods:
