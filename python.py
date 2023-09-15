@@ -74,6 +74,12 @@ def test_thing():
 def test_thing_that_raises():
     with pytest.raises(AttributeError):
         thing_that_raises("nobody_matches")
+
+# Apply to all tests
+# Can be ignored: https://stackoverflow.com/questions/38748257/disable-autouse-fixtures-on-specific-pytest-marks
+@pytest.fixture(autouse=True)
+def no_requests(monkeypatch):
+    monkeypatch.setattr("requests.sessions.Session.request", MagicMock())
     
 # Pytest run and see DEBUG logs:
 # pytest -o log_cli=true --log-cli-level=DEBUG 
