@@ -49,6 +49,7 @@ logging.getLogger("googleapiclient.http").addFilter(google_api_logging_filter)
 def test_socket_mocking(con):
     mock_socket = mock.Mock()
     mock_socket.id = "sock"
+    # use __aenter__ for async:
     con.return_value.__enter__.return_value = mock_socket
     # Do something
     assert "data" in mock_socket.sendall.call_args_list[0].args[0]
