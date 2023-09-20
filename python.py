@@ -30,7 +30,17 @@ class Sample:
     @track_runtime
     def begin_check(self):
         pass
-    
+
+# Logging ----------------------------------------------------------
+
+# Logging filters: Remove certain logs from libraries:
+def google_api_logging_filter(record):
+    # NOTE: If return is False, then the message is filtered
+    return record.getMessage() != 'bad thing'
+
+logging.getLogger("googleapiclient.http").addFilter(google_api_logging_filter)
+
+
 # MOCK -------------------------------------------------------------
 
 # Mock a context manager - Here a sock connection returns a mocked socket
@@ -93,3 +103,4 @@ def no_requests(monkeypatch):
 # Add breakpoint at runtime:
 # b <linenumber> (current file)
 # b <full_file_path>:<linenumber>
+
