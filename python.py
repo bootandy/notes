@@ -77,6 +77,10 @@ def test_thing():
     with(mock.patch("something.modulename.class_or_func", mock.Mock())):
         call_thing()
 
+# Mock __iter__ for iterable object:
+# Note MagicMock will implement all __x__ methods
+Mock(items = [])
+
 # PYTEST -------------------------------------------------------------   
 
 # Test Catch Exceptions
