@@ -72,6 +72,9 @@ Alternate way of finding 500 errors:
 
 
 ## Other:
+#### Sort files then Diff in one:
+bash -c 'diff <(sort file1) <(sort file2)'
+
 #### Cut:
 Split filename by '_' show first part of filename:
 * ls * | cut -f1 -d '_'
