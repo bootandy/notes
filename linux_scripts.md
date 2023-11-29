@@ -14,7 +14,7 @@
 #### Grep, count:
 * grep 'fish' my_food.log |sort | uniq
  
-#### Grepping with RegEx:
+#### Grepping with `RegEx`:
 Returns the last word in each line.
 \w doesn't work
 
@@ -33,6 +33,9 @@ Note: add -P for more regex terms allowing you to use \d & \s [Search for 50X er
    use of -B and -A to look at lines 'near' the problem line
 * cat -n 2014-02-01.log | grep -i rball |grep -B10 -A50 1680071
 
+#### Pipes `fd` & `xargs`
+Find files called multitrip.conf then grep for KEYWORD
+* fd -0   multitrip.conf | xargs --null  rg KEYWORD
  
 ## Awk:
 
