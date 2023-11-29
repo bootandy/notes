@@ -114,6 +114,13 @@ FULLHOSTNAME=`hostname -f`
 if [ "$FULLHOSTNAME" = "5jane" ]; then
         echo "hi"
 fi
+
+case $PWD/ in
+    (*/remote/*) COLOR_DIR=$BLUE;;
+    (*/local/*) COLOR_DIR=$CYAN;;
+    (*) COLOR_DIR=$WHITE;;
+esac
+
 ```
 You need a space after '[' and before ']' 
 You need a ';' Use `-gt' for greater than.
