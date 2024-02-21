@@ -48,7 +48,6 @@ cc=4
 awk '{  split($1, ar, "="); sum += ar[2]; } END { print sum; }' < ab2.txt
 ```
 
-
 #### Awk:
 * $0 = the whole line
 * $1..n = the line after a split by space
@@ -73,6 +72,9 @@ Find all 400 errors in this todays log:
 Alternate way of finding 500 errors: 
 * cat /log/nginx_access/current | awk '$9 == "500" { print $0 }' | less
 
+## Sed:
+Filter from todays day to tomorrows day
+``` sed -n "/$(date '+%A')/,/$(date '+%A' --date="next day")/p" ```
 
 ## Other:
 #### Sort files then Diff in one:
