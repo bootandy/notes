@@ -14,7 +14,6 @@
 #### Undo commits but keep the changes on my local area:
 * git reset --soft HEAD^
 
-
 #### Delete remote branch
 * git push origin --delete 
 
@@ -36,6 +35,12 @@ Search for component:
 * git log -p -S SEARCH_FOR optional_limit_by_dir
 History of a file:
 * git log --full-history -- dir/myfile.py
+
+### Blame:
+* git blame -L 400,+10 basic.py
+ Look at lines 400->410. 
+* git blame -C -C -C basic.py
+ '-C' is smartly ignore renames, up to 3 are allowed. Compute heavy.
 
 #### Edit commit order:
 * git rebase -i
