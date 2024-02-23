@@ -29,18 +29,22 @@
 
 #### Search thru git logs:
 * git log --all-match --grep=search_string --author=andy
-Git logs with follow [Follow change thru file moves]:
+
+##### Git logs with follow [Follow change thru file moves]:
 * git log --follow
-Search for component:
+
+##### Search for component:
 * git log -p -S SEARCH_FOR optional_limit_by_dir
-History of a file:
+
+##### History of a file:
 * git log --full-history -- dir/myfile.py
 
 ### Blame:
-* git blame -L 400,+10 basic.py
- Look at lines 400->410. 
-* git blame -C -C -C basic.py
- '-C' is smartly ignore renames, up to 3 are allowed. Compute heavy.
+##### Look at lines 400->410. 
+  * git blame -L 400,+10 basic.py
+##### '-C' is smartly ignore renames, up to 3 are allowed. Compute heavy.
+  * git blame -C -C -C basic.py
+
 
 #### Edit commit order:
 * git rebase -i
