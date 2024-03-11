@@ -1,6 +1,6 @@
 ## React ideas
-const func = useSetAtom(someAtom) # This calls a function from global state
-const [field, func] = useAtom(someAtom) # This calls a function & stores the value from global state
+* const func = useSetAtom(someAtom) # This calls a function from global state
+* const [field, func] = useAtom(someAtom) # This calls a function & stores the value from global state
 
 ### Rule of thumb:
 Functions should never read fields. 
