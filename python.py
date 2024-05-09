@@ -40,6 +40,10 @@ def google_api_logging_filter(record):
 
 logging.getLogger("googleapiclient.http").addFilter(google_api_logging_filter)
 
+# FileIO -----------------------------------------------------------
+p = Path("lazy_file_write")
+p.write_text("hello")
+
 
 # MOCK -------------------------------------------------------------
 
