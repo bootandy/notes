@@ -43,7 +43,8 @@ logging.getLogger("googleapiclient.http").addFilter(google_api_logging_filter)
 # FileIO -----------------------------------------------------------
 p = Path("lazy_file_write")
 p.write_text("hello")
-
+[p.strip() for line in p ]  # no need for p.readlines()
+p.read_text() # lazy read
 
 # MOCK -------------------------------------------------------------
 
