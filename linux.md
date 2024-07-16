@@ -2,6 +2,14 @@
 [Trouble with CAPS-LOCK mapped to ESCAPE in VSCode](https://stackoverflow.com/questions/37777417/how-to-use-vim-key-bindings-with-visual-studio-code-vim-extension)
 Search in settings, for 
 keyboard.dispatch - change to keyCode
+Basic settings.json:
+
+    "keyboard.dispatch": "keyCode",
+    "vim.handleKeys": {
+        "<C-p>": false,
+        "<C-d>": true
+    }
+    
 
 #### Cron:
 [From SO](https://stackoverflow.com/questions/12786410/run-cron-job-every-n-minutes-plus-offset)
