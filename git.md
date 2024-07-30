@@ -18,7 +18,7 @@
 * git push origin --delete 
 
 #### Pull someone else's branch to local files:
-*  `git remote add username https://github.com/username/projectname.git  `
+*  `git remote add username https://github.com/username/projectname.git  `(in github click code -> copy git link)
 *  `git fetch username`
 
 #### Master has gone to hell. My current branch should be master instead
