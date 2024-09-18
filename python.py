@@ -86,6 +86,12 @@ def test_thing():
 # Note MagicMock will implement all __x__ methods
 Mock(items = [])
 
+# Mock a file open:
+# with open('file') as to_read:
+with mock.patch("builtins.open", mock.mock_open(read_data="fake str data for to_read")):
+     with open('file') as to_read:
+         i_read_the_mocked_data()
+
 # PYTEST -------------------------------------------------------------   
 
 # Test Catch Exceptions
