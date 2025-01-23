@@ -8,10 +8,13 @@
 
 #### Async
 * Not awaiting a call:
+
   Here if task occassionally takes longer than 10 seconds, we run 2 tasks at once. If task takes out a lock we fail confusingly:
+```
   While !cancelled:
      nursery.start_soon(task)
      sleep(10)
+```
   
 #### Units in names
 * No: timeout
