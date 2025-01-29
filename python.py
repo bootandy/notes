@@ -82,6 +82,27 @@ def test_thing():
     with(mock.patch("something.modulename.class_or_func", mock.Mock())):
         call_thing()
 
+
+# For mocks the time python imports files is vital:
+    # file: path.original
+    from some_lib import func_name
+    def do_thing():
+        func_name()
+    
+    # Now for the test func_name was imported into path.original:
+    with mock.patch("path.original.func_name", return_value=[])
+        do_thing()
+    
+    # file: path.original
+    def do_thing():
+        from some_lib import func_name
+        func_name()
+    
+    # Now for the test we use original path to func_name:
+    with mock.patch("some_lib.func_name", return_value=[])
+        do_thing()
+
+      
 # Mock __iter__ for iterable object:
 # Note MagicMock will implement all __x__ methods
 Mock(items = [])
