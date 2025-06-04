@@ -19,8 +19,11 @@
 #### Units in names
 * No: timeout
 * Yes: [timeout_seconds](https://ruudvanasseldonk.com/2022/03/20/please-put-units-in-names)
-        
- 
+
+#### Correctly turn '' or None into the empty string
+* No: str(kwargs.get("out_dir", ""))
+* Yes: kwargs.get("out_dir") or ""
+
 ## Things to do better
 * When asked when & why 'x':
   * Search the git history, search PR history
