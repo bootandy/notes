@@ -113,6 +113,18 @@ with mock.patch("builtins.open", mock.mock_open(read_data="fake str data for to_
      with open('file') as to_read:
          i_read_the_mocked_data()
 
+
+# Mock a property (Alternate: use PropertyMock)
+# From: https://stackoverflow.com/questions/11836436/how-to-mock-a-readonly-property-with-mock/55642462
+class Flex:
+    @property
+    def prop(self) -> list[str]:
+        return []
+
+with patch.object(Flex, "prop") as name:
+    name.__get__ = Mock(return_value=["test1", "test2"])
+    flex = Flex()
+
 # PYTEST -------------------------------------------------------------   
 
 # Test Catch Exceptions
