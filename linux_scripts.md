@@ -46,6 +46,8 @@ a=1
 bbbb=2
 cc=4
 awk '{  split($1, ar, "="); sum += ar[2]; } END { print sum; }' < ab2.txt
+OR
+cat ab2.txt | awk -F '=' '{s+=$2} END {print s}'
 ```
 
 #### Awk:
