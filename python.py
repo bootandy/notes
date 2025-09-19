@@ -156,8 +156,10 @@ def no_requests(monkeypatch):
 #    https://docs.pytest.org/en/6.2.x/fixture.html
 
 # To test what is logged:
-caplog.set_level(logging.INFO)
-actual_logging = [(record.levelname, record.message) for record in caplog.records]
+def test_logs(caplog: pytest.LogCaptureFixture):
+    caplog.set_level(logging.INFO)
+    do_stuff()
+    actual_logging = [(record.levelname, record.message) for record in caplog.records]
 
 # PDB -------------------------------------------------------------   
 # Add breakpoint at runtime:
