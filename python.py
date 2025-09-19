@@ -155,6 +155,9 @@ def no_requests(monkeypatch):
 # Global apply to all fixture: Autouse
 #    https://docs.pytest.org/en/6.2.x/fixture.html
 
+# To test what is logged:
+caplog.set_level(logging.INFO)
+actual_logging = [(record.levelname, record.message) for record in caplog.records]
 
 # PDB -------------------------------------------------------------   
 # Add breakpoint at runtime:
