@@ -46,6 +46,12 @@ p.write_text("hello")
 [p.strip() for line in p ]  # no need for p.readlines()
 p.read_text() # lazy read
 
+# Except -----------------------------------------------------------
+try:
+    raise ExceptionGroup(....)
+# except* allows you to catch members of an ExceptionGroup (eg trio MultiError)
+except* SubType
+                         
 # MOCK -------------------------------------------------------------
 
 # Mock a context manager - Here a sock connection returns a mocked socket
@@ -81,6 +87,10 @@ from something import modulename
 def test_thing():
     with(mock.patch("something.modulename.class_or_func", mock.Mock())):
         call_thing()
+
+# Alternate: Mock method in current file:
+with patch.object(sys.modules[__name__], "call_thing", _fake_call_thing):
+    call_thing()    
 
 
 # For mocks the time python imports files is vital:
