@@ -31,8 +31,8 @@
 #### Search thru git logs:
 * git log --all-match --grep=search_string --author=andy
 
-##### Git logs with follow [Follow change thru file moves]:
-* git log --follow
+##### Git logs with follow [Follow change thru file moves & rename]:
+* git log --follow -- path_and_file.py
 
 ##### Search for component:
 * git log -p -S SEARCH_FOR optional_limit_by_dir
