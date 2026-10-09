@@ -28,6 +28,10 @@ Note: add -P for more regex terms allowing you to use \d & \s [Search for 50X er
 
 * grep -v -f file.txt test.txt
 
+ #### Rip Grep find all values in file:
+ 
+* rg -vxF -f file_with_lines_to_find target
+
 #### Nice grep example:
    cat -n: print line number.
    use of -B and -A to look at lines 'near' the problem line
